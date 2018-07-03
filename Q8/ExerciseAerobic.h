@@ -27,6 +27,7 @@ public:
 	void toString()const override
 	{
 		Exercise::toString();
+		cout << "MusclesGroup:  " << (reinterpret_cast<const Aerobic *>(device))->getCalories() << endl;
 		cout << "Minutes:      " << getMinutes() << endl;
 		cout << "Pulse Rate:   " << getPulse() << endl;
 	}

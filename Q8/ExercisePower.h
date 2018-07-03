@@ -28,6 +28,7 @@ public:
 	void toString()const override
 	{
 		Exercise::toString();
+		cout << "MusclesGroup:  " << (reinterpret_cast<const Power *>(device))->getMusclesGroup() << endl;
 		cout << "Sets :         " << getSets() << endl;
 		cout << "Repetitions:   " << getReps() << endl;
 
