@@ -7,7 +7,7 @@
 // this class as belonging to both class types "PowerDevice"and "AerobicDevice"
 // ortherwise we were using inheritance from "Device" only
 
-class AerobicPowerDevice: virtual public PowerDevice, virtual public AerobicDevice
+class AerobicPowerDevice : virtual public PowerDevice, virtual public AerobicDevice
 {
 protected:
 	int caloriesAP;
@@ -15,9 +15,9 @@ protected:
 public:
 	AerobicPowerDevice(int serialNumber, string name, int calories, string musclesGroup) :
 		PowerDevice(), AerobicDevice(),
-		Device(serialNumber, name), caloriesAP(calories), musclesGroupAP(musclesGroup)	{}
+		Device(serialNumber, name), caloriesAP(calories), musclesGroupAP(musclesGroup) {}
 
-	AerobicPowerDevice() :PowerDevice(),AerobicDevice(),caloriesAP(0), musclesGroupAP("") {}
+	AerobicPowerDevice() :PowerDevice(), AerobicDevice(), caloriesAP(0), musclesGroupAP("") {}
 
 	//set & get
 	//discard calories and musclesGroup from inherited classes
@@ -40,7 +40,6 @@ public:
 
 		return deviceDescription.str();
 	}
-
 
 	virtual ~AerobicPowerDevice() {}
 };
