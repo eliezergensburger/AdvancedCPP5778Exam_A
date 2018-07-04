@@ -38,12 +38,12 @@ public:
 	{
 		for (auto ex : exercises)
 		{
-			if (strcmp(typeid(*(ex->getDevice())).name(), "class PowerDevice") == 0)
+			if (dynamic_cast<const PowerDevice*>(ex->getDevice())!= nullptr)
 			{
 				cout << "PowerExercise: " << endl;
 				cout << "------------------------" << endl;
-				cout << ex->getDevice()->description() << endl;
-				cout << ex->toString();
+				cout << ex->getDevice()->deviceInfo() << endl;
+				cout << ex->toString() << endl;
 				cout << "------------------------" << endl;
 			}
 		}
@@ -52,26 +52,13 @@ public:
 	{
 		for (auto ex : exercises)
 		{
-			if (strcmp(typeid(*(ex->getDevice())).name(), "class AerobicDevice") == 0)
+	//		if (strcmp(typeid(*(ex->getDevice())).name(), "class AerobicDevice") == 0)
+			if (dynamic_cast<const AerobicDevice*>(ex->getDevice()) != nullptr)
 			{
 				cout << "AerobicExercise: " << endl;
 				cout << "------------------------" << endl;
-				cout << ex->getDevice()->description() << endl;
-				cout << ex->toString();
-				cout << "------------------------" << endl;
-			}
-		}
-	}
-	void printAllPowerAerobicExercises()
-	{
-		for (auto ex : exercises)
-		{
-			if (strcmp(typeid(*(ex->getDevice())).name(), "class PowerAerobicDevice") == 0)
-			{
-				cout << "PowerAerobicExercise: " << endl;
-				cout << "------------------------" << endl;
-				cout << ex->getDevice()->description() << endl;
-				cout << ex->toString();
+				cout << ex->getDevice()->deviceInfo() << endl;
+				cout << ex->toString() << endl;
 				cout << "------------------------" << endl;
 			}
 		}
@@ -109,16 +96,20 @@ public:
 		}
 		if (p_ex)
 		{
+			cout << "**** workout ";
+			cout << p_ex->getDevice()->getSerial();
+			cout << " ****"<< endl;
 			p_ex->training();
 		}
 	}
 
 	void fullworkout()
 	{
+		cout << "**** full workout ****" << endl;
 		for (auto ex : exercises)
 		{
 			ex->training();
-			cout << "------------------------" << endl;
 		}
+		cout << "*** end of full workout ***" << endl;
 	}
 };

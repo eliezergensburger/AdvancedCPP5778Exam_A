@@ -14,8 +14,9 @@ public:
 	void  training() const 
 	{
 		cout << "Training with: " << endl;
-		cout << getDevice()->description() << endl;
-		cout << toString() << endl;
+		cout << getDevice()->deviceInfo()<<endl;
+		cout << toString()<<endl;
+		cout << "-----------------------" << endl;
 	}
 
 	virtual ~Exercise() {}

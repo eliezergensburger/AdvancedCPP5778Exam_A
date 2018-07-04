@@ -11,8 +11,21 @@ public:
 	PowerDevice() {}
 
 	//set & get
-	string getMusclesGroup() const { return musclesGroup; }
-	void setMusclesGroup(string musclesGroup) { musclesGroup = musclesGroup; }
+    virtual string getMusclesGroup() const { return musclesGroup; }
+	virtual void setMusclesGroup(string musclesGroup) { musclesGroup = musclesGroup; }
+	
+	string  deviceInfo() const override
+	{
+		stringstream deviceDescription;
+		deviceDescription << "device description: \n";
+		deviceDescription << "******************* \n";
+
+		deviceDescription << "Device name:   " << getName() << "\n";
+		deviceDescription << "Device serial: " << getSerial() << "\n";
+		deviceDescription << "MusclesGroup:  " << getMusclesGroup() ;
+
+		return deviceDescription.str();
+	}
 
 	virtual ~PowerDevice() {}
 };

@@ -13,7 +13,7 @@ protected:
 	const AerobicPowerDevice* device;
 public:
 	ExercisePowerAerobic(const AerobicPowerDevice& apd, int s, int r, int m, int p) :
-		device(&apd), ExercisePower(), ExerciseAerobic()
+		 ExercisePower(apd,s,r), ExerciseAerobic(apd,m,p), device(&apd)
 	{
 		setSets(s);
 		setReps(r);
@@ -28,6 +28,7 @@ public:
 		string result = "";
 
 		result += ExercisePower::toString();
+		result += "\n";
 		result += ExerciseAerobic::toString();
 
 		return result;

@@ -32,9 +32,11 @@ public:
 	{
 		stringstream result ;
 
-		result << "MusclesGroup:  " << device->getMusclesGroup() << "\n";
-		result << "Sets :         " << getSets() << "\n";
-		result << "Repetitions:   "<<  getReps()<< "\n";
+		result << "+++++++++++++++++\n";
+		result << "** Exercise: **\n";
+		result << "Sets :       " << getSets() << "\n";
+		result << "Repetitions: "<<  getReps()<< "\n";
+		result << "+++++++++++++++++";
 
 		return result.str();
 	}

@@ -31,10 +31,11 @@ public:
 	string toString()const override
 	{
 		stringstream result;
-
-		result << "Calories:  "<< device->getCalories()<< "\n"; 
-		result << "Minutes:      "<< getMinutes()<< "\n"; 
-		result << "Pulse Rate:   "<< getPulse()<< "\n";
+		result << "+++++++++++++++++\n";
+		result << "** Exercise: **\n";
+		result << "Minutes:    "<< getMinutes()<< "\n";
+		result << "Pulse Rate: "<< getPulse()<< "\n";
+		result << "+++++++++++++++++";
 
 		return result.str();
 	}
