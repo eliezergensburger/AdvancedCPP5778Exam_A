@@ -115,15 +115,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Aerobic.h" />
-    <ClInclude Include="AerobicPower.h" />
+    <ClInclude Include="AerobicDevice.h" />
+    <ClInclude Include="AerobicPowerDevice.h" />
     <ClInclude Include="Device.h" />
     <ClInclude Include="Exercise.h" />
     <ClInclude Include="ExerciseAerobic.h" />
     <ClInclude Include="ExercisePower.h" />
     <ClInclude Include="ExercisePowerAerobic.h" />
     <ClInclude Include="Gym.h" />
-    <ClInclude Include="Power.h" />
+    <ClInclude Include="PowerDevice.h" />
     <ClInclude Include="Trainee.h" />
   </ItemGroup>
   <ItemGroup>

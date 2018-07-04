@@ -1,24 +1,22 @@
 #pragma once
 #include "Device.h"
-#include "Aerobic.h"
-#include "Power.h"
-#include "AerobicPower.h"
-class Exercise	//abstract class
+#include "AerobicDevice.h"
+#include "PowerDevice.h"
+#include "AerobicPowerDevice.h"
+class Exercise	// abstract class
 {
-protected:
-	const Device * device;
 public:
-	Exercise(const Device& d) :device(&d){ }
 	Exercise() {}
 
-	const Device * getDevice() const { return device ; }
+	virtual const Device * getDevice() const = 0; // pure virtual
+	string virtual toString() const = 0; // pure virtual
 
-	void virtual training() const = 0; //;pure virtual
-
-	void virtual toString() const 
-	{ 
-		cout << "Device name:   " << device->getName() << endl;
-		cout << "Device serial: " << device->getSerial() << endl;
+	void  training() const 
+	{
+		cout << "Training with: " << endl;
+		cout << getDevice()->description() << endl;
+		cout << toString() << endl;
 	}
+
 	virtual ~Exercise() {}
 };

@@ -1,6 +1,8 @@
 #pragma once
 #include "Exercise.h"
 #include <iostream>
+#include <sstream>
+#include <string>
 using namespace std;
 
 class ExercisePower:  virtual public Exercise
@@ -8,10 +10,11 @@ class ExercisePower:  virtual public Exercise
 protected:
 	int sets;
 	int reps; //repeat
+	const PowerDevice* device;
 public:
 	ExercisePower() {}
-	ExercisePower(const Device& d,int sets, int reps) 
-		:Exercise(d),sets(sets), reps(reps) {}
+	ExercisePower(const PowerDevice& pd,int sets, int reps)
+		:device(&pd),sets(sets), reps(reps) {}
 
 	int getSets() const{ return sets; }
 	int getReps() const { return reps; }
@@ -20,18 +23,20 @@ public:
 	void setReps(int val) {  reps = val; }
 
 
-	void   training() const override 
-	{ 
-		cout << "doing " << sets << " in " << reps << " repetitions" << endl; 
-	}
-	
-	void toString()const override
+	const Device * getDevice() const override
 	{
-		Exercise::toString();
-		cout << "MusclesGroup:  " << (reinterpret_cast<const Power *>(device))->getMusclesGroup() << endl;
-		cout << "Sets :         " << getSets() << endl;
-		cout << "Repetitions:   " << getReps() << endl;
+		return device;
+	}
 
+	string toString()const override
+	{
+		stringstream result ;
+
+		result << "MusclesGroup:  " << device->getMusclesGroup() << "\n";
+		result << "Sets :         " << getSets() << "\n";
+		result << "Repetitions:   "<<  getReps()<< "\n";
+
+		return result.str();
 	}
 
 	virtual ~ExercisePower() {}

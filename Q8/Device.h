@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <sstream>
 #include <string>
 using namespace std;
 
@@ -18,6 +19,19 @@ public:
 
 	void setSerial(int serial) { serialNumber = serial ;}
 	void setName(string name) { this->name = name; }
+
+	string  description() const
+	{
+		stringstream deviceDescription;
+		deviceDescription << "device description: \n";
+		deviceDescription << "******************* \n";
+
+		deviceDescription << "Device name:   "<< getName() << "\n";
+		deviceDescription << "Device serial: "<< getSerial()<< "\n";
+
+		return deviceDescription.str();
+	}
+
 
 	virtual ~Device() {}
 };

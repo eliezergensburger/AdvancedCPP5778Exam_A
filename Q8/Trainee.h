@@ -1,8 +1,8 @@
 #pragma once
 #include "Device.h"
-#include "Aerobic.h"
-#include "Power.h"
-#include "AerobicPower.h"
+#include "AerobicDevice.h"
+#include "PowerDevice.h"
+#include "AerobicPowerDevice.h"
 #include "Exercise.h"
 #include <list>
 #include<algorithm>
@@ -30,7 +30,7 @@ public:
 				return; //quit the function
 			}
 		}
-		//not foud
+		//not found
 		exercises.push_back(p_ex);
 		setLastUpdate(update);
 	}
@@ -38,9 +38,13 @@ public:
 	{
 		for (auto ex : exercises)
 		{
-			if (strcmp(typeid(ex->getDevice()).name(),"Power*")==0)
+			if (strcmp(typeid(*(ex->getDevice())).name(), "class PowerDevice") == 0)
 			{
-				ex->toString();
+				cout << "PowerExercise: " << endl;
+				cout << "------------------------" << endl;
+				cout << ex->getDevice()->description() << endl;
+				cout << ex->toString();
+				cout << "------------------------" << endl;
 			}
 		}
 	}
@@ -48,9 +52,13 @@ public:
 	{
 		for (auto ex : exercises)
 		{
-			if (strcmp(typeid(ex->getDevice()).name(), "Aerobic*") == 0)
+			if (strcmp(typeid(*(ex->getDevice())).name(), "class AerobicDevice") == 0)
 			{
-				ex->toString();
+				cout << "AerobicExercise: " << endl;
+				cout << "------------------------" << endl;
+				cout << ex->getDevice()->description() << endl;
+				cout << ex->toString();
+				cout << "------------------------" << endl;
 			}
 		}
 	}
@@ -58,9 +66,13 @@ public:
 	{
 		for (auto ex : exercises)
 		{
-			if (strcmp(typeid(ex->getDevice()).name(), "PowerAerobic*") == 0)
+			if (strcmp(typeid(*(ex->getDevice())).name(), "class PowerAerobicDevice") == 0)
 			{
-				ex->toString();
+				cout << "PowerAerobicExercise: " << endl;
+				cout << "------------------------" << endl;
+				cout << ex->getDevice()->description() << endl;
+				cout << ex->toString();
+				cout << "------------------------" << endl;
 			}
 		}
 	}
@@ -86,7 +98,7 @@ public:
 
 	void workout(int serial)
 	{
-		const Exercise* p_ex;
+		const Exercise* p_ex= nullptr;
 		for (auto ex : exercises)
 		{
 			if (ex->getDevice()->getSerial() == serial)
@@ -95,7 +107,10 @@ public:
 				break;
 			}
 		}
-		p_ex->training();
+		if (p_ex)
+		{
+			p_ex->training();
+		}
 	}
 
 	void fullworkout()
@@ -103,6 +118,7 @@ public:
 		for (auto ex : exercises)
 		{
 			ex->training();
-		}		
+			cout << "------------------------" << endl;
+		}
 	}
 };
