@@ -21,8 +21,25 @@ public:
 		return (n >= minParticipants);
 	}
 	~Meeting() { if (n) delete[] attendees; }
+	
+	bool isRegistered(Attendee & att)
+	{
+		for (int i = 0; i < n; i++)
+		{
+			if (attendees[i] == &att)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
 	bool addAttendee(Attendee & att)
 	{
+		if (isRegistered(att))
+		{
+			return false;
+		}
 		Attendee** temp;
 		if (n < maxCapacity)
 		{
