@@ -38,6 +38,7 @@ public:
 	{
 		for (auto ex : exercises)
 		{
+			//use dynamic_cast insteed of typeid
 			if (dynamic_cast<const PowerDevice*>(ex->getDevice())!= nullptr)
 			{
 				cout << "PowerExercise: " << endl;
