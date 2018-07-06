@@ -16,7 +16,7 @@ class Trainee
 public:
 	Trainee() {}
 	Trainee(string name) :name(name) {}
-
+	string getName() const { return name; }
 	string getLastUpdate() const { return lastUpdate; }
 	void setLastUpdate(string update) { lastUpdate = update; }
 

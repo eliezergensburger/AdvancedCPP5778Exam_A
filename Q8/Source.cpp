@@ -1,21 +1,21 @@
 #include "Gym.h"
 #include <iostream>
+#include "Source.h"
 using namespace std;
 
 int main()
 {
 	Gym jctGym;
 
-	Trainee johndoe = Trainee("john doe");
-	jctGym.trainees.push_back(&johndoe);
+	jctGym.addTrainee(new Trainee("john doe"));
 
 	AerobicDevice a = AerobicDevice(101, "treadmill", 200);
 	PowerDevice p = PowerDevice(202, "dumbbells 5kg", "shoulders");
 	AerobicPowerDevice ap = AerobicPowerDevice(303, "meshulav 200", 450, "legs");
 
-	jctGym.devices.push_back(&a);
-	jctGym.devices.push_back(&p);
-	jctGym.devices.push_back(&ap);
+	jctGym.addDevice(&a);
+	jctGym.addDevice(&p);
+	jctGym.addDevice(&ap);
 
 	ExerciseAerobic ex = ExerciseAerobic(a, 30, 120);
 	ExercisePower exp = ExercisePower(p, 15, 20);
@@ -33,22 +33,23 @@ int main()
 	cout << expa.toString() << endl;
 	cout << endl;
 
-	johndoe.addExercise(&ex, "03 07 2018");
-	johndoe.addExercise(&exp, "03 07 2018");
-	johndoe.addExercise(&expa, "03 07 2018");
+	Trainee* p_johndoe = jctGym.getTrainee("johndoe");
+	p_johndoe->addExercise(&ex, "03 07 2018");
+	p_johndoe->addExercise(&exp, "03 07 2018");
+	p_johndoe->addExercise(&expa, "03 07 2018");
 
-	johndoe.workout(202);
+	p_johndoe->workout(202);
 	cout << endl;
 
-	johndoe.fullworkout();
+	p_johndoe->fullworkout();
 	cout << endl;
 
 	cout << "**********************" << endl;
 	cout << endl;
 	cout << "^^^^^^^^^^^^^^^^^^^^^^" << endl;
-	johndoe.printAllAerobicExercises();
+	p_johndoe->printAllAerobicExercises();
 	cout << "^^^^^^^^^^^^^^^^^^^^^^" << endl;
-	johndoe.printAllPowerExercises();
+	p_johndoe->printAllPowerExercises();
 	cout << "^^^^^^^^^^^^^^^^^^^^^^" << endl;
 /*	Trainee & tt = *(jctGym.trainees.front());
 	jctGym.trainees.front()->printAllPowerExercises();

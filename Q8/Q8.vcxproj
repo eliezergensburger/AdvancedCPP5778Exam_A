@@ -124,6 +124,7 @@
     <ClInclude Include="ExercisePowerAerobic.h" />
     <ClInclude Include="Gym.h" />
     <ClInclude Include="PowerDevice.h" />
+    <ClInclude Include="Source.h" />
     <ClInclude Include="Trainee.h" />
   </ItemGroup>
   <ItemGroup>
