@@ -50,8 +50,13 @@ public:
 
 	bool addTrainee(Trainee* trainee)
 	{
+		if (trainees.empty())
+		{
+			trainees.push_back(trainee);
+			return true;
+		}
 		auto it = find(trainees.begin(), trainees.end(), trainee);
-		if (it == trainees.end())
+		if (it != trainees.end())
 		{
 			return false;
 		}
@@ -61,8 +66,13 @@ public:
 
 	bool addDevice(Device* device)
 	{
+		if (devices.empty())
+		{
+			devices.push_back(device);
+			return true;
+		}
 		auto it = find(devices.begin(), devices.end(), device);
-		if (it == devices.end())
+		if (it != devices.end())
 		{
 			return false;
 		}

@@ -33,7 +33,7 @@ int main()
 	cout << expa.toString() << endl;
 	cout << endl;
 
-	Trainee* p_johndoe = jctGym.getTrainee("johndoe");
+	Trainee* p_johndoe = jctGym.getTrainee("john doe");
 	p_johndoe->addExercise(&ex, "03 07 2018");
 	p_johndoe->addExercise(&exp, "03 07 2018");
 	p_johndoe->addExercise(&expa, "03 07 2018");
