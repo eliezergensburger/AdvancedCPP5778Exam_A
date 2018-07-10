@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\..\..\Downloads\150013-final-exam-moedA.pdf = ..\..\..\Downloads\150013-final-exam-moedA.pdf
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Q8_Alternative", "Q8_Alternative\Q8_Alternative.vcxproj", "{865DEB6A-43B1-4432-B5A1-C51E57B3E78C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -96,6 +98,14 @@ Global
 		{7F7D47E5-498E-4353-8D63-741418C54FF5}.Release|x64.Build.0 = Release|x64
 		{7F7D47E5-498E-4353-8D63-741418C54FF5}.Release|x86.ActiveCfg = Release|Win32
 		{7F7D47E5-498E-4353-8D63-741418C54FF5}.Release|x86.Build.0 = Release|Win32
+		{865DEB6A-43B1-4432-B5A1-C51E57B3E78C}.Debug|x64.ActiveCfg = Debug|x64
+		{865DEB6A-43B1-4432-B5A1-C51E57B3E78C}.Debug|x64.Build.0 = Debug|x64
+		{865DEB6A-43B1-4432-B5A1-C51E57B3E78C}.Debug|x86.ActiveCfg = Debug|Win32
+		{865DEB6A-43B1-4432-B5A1-C51E57B3E78C}.Debug|x86.Build.0 = Debug|Win32
+		{865DEB6A-43B1-4432-B5A1-C51E57B3E78C}.Release|x64.ActiveCfg = Release|x64
+		{865DEB6A-43B1-4432-B5A1-C51E57B3E78C}.Release|x64.Build.0 = Release|x64
+		{865DEB6A-43B1-4432-B5A1-C51E57B3E78C}.Release|x86.ActiveCfg = Release|Win32
+		{865DEB6A-43B1-4432-B5A1-C51E57B3E78C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
